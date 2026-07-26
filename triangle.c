@@ -80,8 +80,10 @@ void draw_line(double x0, double y0, double x1, double y1, Pixel color) {
 void save_file(const char *filename) {
   FILE *f = fopen(filename, "wb");
 
+  // ppm header
   fprintf(f, "P6\n%d %d\n255\n", WIDTH, HEIGTH);
 
+  // write framebuffer binary to f
   fwrite(framebuffer, sizeof(Pixel), WIDTH * HEIGTH, f);
 
   fclose(f);
