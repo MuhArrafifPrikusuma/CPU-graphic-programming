@@ -30,10 +30,11 @@ int main(int argc, char *argv[]) {
   int x0 = xs0 + (WIDTH / 2), x1 = xs1 + (WIDTH / 2);
   int y0 = ys0 + (HEIGTH / 2), y1 = ys1 + (HEIGTH / 2);
 
-  draw_line(x0, y0, x1, y0, color_me());
-  draw_line(x0, y0, x1, y1, color_me());
-  draw_line(x1, y0, x0, y1, color_me());
-  draw_line(x0, y1, x1, y1, color_me());
+  draw_line(x0 + 150, y0 + 150, x1 - 150, y0 + 150, color_me()); // <- bottom
+  draw_line(x0 + 150, y0 + 150, x1, y1 - 490,
+            color_me()); // <- hypotenuse right
+  draw_line(x1 - 150, y0 + 150, x0, y1 - 490,
+            color_me()); // <- hypotenuse left
 
   save_file(argv[1]);
 
